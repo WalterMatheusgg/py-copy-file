@@ -4,7 +4,10 @@ def copy_file(command: str) -> None:
     if len(parts) != 3:
         return
 
-    _, old_file, new_file = parts
+    cmd, old_file, new_file = parts
+
+    if cmd != "cp":
+        return
 
     if old_file == new_file:
         return
